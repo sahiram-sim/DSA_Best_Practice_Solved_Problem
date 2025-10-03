@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Aliases for convenience
+using pii = pair<int, int>;
+using vi = vector<int>;
+using vvi = vector<vi>;
+
+// Loop macros
+#define fr(i, l, r) for (int i = (l); i < (r); i++)
+#define all(x) (x).begin(), (x).end()
+
 vector<vector<int>> adj;
 vector<int> low, disc, parent;
 vector<bool> vis;
