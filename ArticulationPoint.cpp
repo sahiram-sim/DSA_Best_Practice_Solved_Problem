@@ -17,6 +17,17 @@ int n, m;
 vector<bool> ap;
 vector<pair<int, int>> bridges;
 
+class Graph
+{
+private:
+    int n;                // Number of nodes
+    vvi adj;              // Adjacency list
+    vi disc, low, parent; // Discovery & Low values, parent tracking
+    vector<bool> vis, ap; // Visited & articulation points
+    vector<pii> bridges;  // List of bridges
+    int timer;            // Global DFS timer
+};
+
 void DFS(int u, int &timer)
 {
     disc[u] = low[u] = ++timer;
