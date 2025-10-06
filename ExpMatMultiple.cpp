@@ -16,7 +16,9 @@ using vvl = vector<vl>;
 using str = string;
 
 // ========== Macros ==========
-#define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
+#define fastio                   \
+    ios::sync_with_stdio(false); \
+    cin.tie(nullptr);
 #define rep(i, n) for (int i = 0; i < n; i++)
 #define repp(i, a, b) for (int i = a; i < b; i++)
 #define per(i, n) for (int i = n - 1; i >= 0; i--)
@@ -35,12 +37,13 @@ using str = string;
 
 // =========== Constants ==========
 constexpr int INF = 1e9 + 7;
-constexpr ll INF = 4e18;
+// constexpr ll INF = 4e18;
 constexpr int MOD = 1e9 + 7;
 constexpr double EPS = 1e-9;
 
 class Matrix
 {
+public:
     vvl mat;
     int size;
     Matrix(int n) : size(n) { mat.assign(n, vl(n, 0)); }
@@ -76,9 +79,9 @@ ll fib(ll n)
     if (n == 0)
         return 0;
     Matrix T(n);
-    T.m = {{1, 1}, {1, 0}};
+    T.mat = {{1, 1}, {1, 0}};
     T = power(T, n - 1);
-    return T.m;
+    return T.mat[0][0];
 }
 
 int main()
